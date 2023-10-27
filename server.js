@@ -6,7 +6,7 @@ import { connectDB } from "./Data/database.js";
 
 app.get("/",(req,res)=>{
 
-    res.send("<h1> HI <h1/> ");
+    res.send("<h1> Hello now I am fine  <h1/> ");
  })
 
 app.listen(process.env.PORT,(req,res)=>{
