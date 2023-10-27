@@ -1,13 +1,14 @@
 import mongoose from "mongoose";
 
-
-
-
 export const connectDB = () =>{
-    mongoose.connect("mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.2",{
+   
+    
+    mongoose.connect(process.env.MONGO_URI,{
         dbname : "To-do",
+         useNewUrlParser: true,
+          useUnifiedTopology: true 
     }
     )
-    .then (() => console.log("Database is connected "))
-    .catch((e) => console.log(e));
+    .then ((c) => console.log(`Database is connected with ${c.connection.host}`))
+    .catch((e) => console.log(e))
 }
